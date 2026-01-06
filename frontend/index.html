@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoScan AI | Land & Soil Analysis</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="logo">ECO<b>SCAN</b></div>
+        <div class="nav-links">
+            <button onclick="showPage('home')">Home</button>
+            <button onclick="showPage('veg-page')">Vegetation</button>
+            <button onclick="showPage('soil-page')">Soil Type</button>
+        </div>
+    </nav>
+
+    <!-- HOME PAGE -->
+    <section id="home" class="page active">
+        <div class="hero">
+            <h1>Environmental Intelligence</h1>
+            <p>
+                Deep Learning–powered analysis using U-Net for vegetation segmentation
+                and YOLOv8 for soil classification.
+            </p>
+            <div class="btn-container">
+                <button class="primary-btn" onclick="showPage('veg-page')">
+                    Analyze Vegetation
+                </button>
+                <button class="primary-btn" onclick="showPage('soil-page')">
+                    Identify Soil Type
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- VEGETATION PAGE -->
+    <section id="veg-page" class="page">
+        <div class="container">
+            <h2>Vegetation Segmentation</h2>
+            <p>Upload an image to estimate green cover percentage.</p>
+
+            <div class="upload-area" id="drop-zone-veg">
+                <input type="file" id="veg-input" hidden accept="image/*">
+                <label for="veg-input" class="action-btn">
+                    Click to Upload Image
+                </label>
+                <img id="veg-preview" class="preview-img" alt="">
+            </div>
+
+            <button class="action-btn" onclick="processAI('vegetation')">
+                Run U-Net Analysis
+            </button>
+
+            <div id="veg-result" class="result-card"></div>
+        </div>
+    </section>
+
+    <!-- SOIL PAGE -->
+    <section id="soil-page" class="page">
+        <div class="container">
+            <h2>Soil Type Detection</h2>
+            <p>Upload a soil image to classify using YOLOv8.</p>
+
+            <div class="upload-area" id="drop-zone-soil">
+                <input type="file" id="soil-input" hidden accept="image/*">
+                <label for="soil-input" class="action-btn">
+                    Click to Upload Image
+                </label>
+                <img id="soil-preview" class="preview-img" alt="">
+            </div>
+
+            <button class="action-btn" onclick="processAI('soil')">
+                Run YOLO Classification
+            </button>
+
+            <div id="soil-result" class="result-card"></div>
+        </div>
+    </section>
+
+    <!-- SCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+</html>
