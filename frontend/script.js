@@ -31,8 +31,8 @@ function previewImage(event, previewId) {
 }
 
 // ---------------- BACKEND CONFIG ----------------
-const API_BASE = "http://127.0.0.1:10000";
-//const API_BASE = "https://YOUR-REAL-BACKEND.onrender.com";
+//const API_BASE = "http://127.0.0.1:10000";
+const API_BASE = "https://eco-scan-friendly-app.onrender.com";
 
 // ---------------- AI PROCESSING ----------------
 
